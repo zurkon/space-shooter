@@ -6,12 +6,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Player Movement")]
+    [Tooltip("Player movement speed value.")]
     public float moveSpeed = 10f;
     [Tooltip("Padding for Player object's half don't go outside of MainCamera.")]
     public Vector2 padding = new Vector2( 0.3f, 1f );
 
     [Header("Player Stats")]
-    public GameObject laserPrefab;
+    [Tooltip("Time in seconds that Ship waits until shoot again.")]
     public float fireRate = 0.1f;
 
     Coroutine firingCoroutine;
@@ -38,7 +39,14 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(laserPrefab, transform.position, Quaternion.identity);
+            // Instantiate(laserPrefab, transform.position, Quaternion.identity);
+            GameObject laser = ObjectPool.SharedInstance.GetPooledObject();
+            if (laser != null)
+            {
+                laser.transform.position = transform.position;
+                laser.transform.rotation = Quaternion.identity;
+                laser.SetActive(true);
+            }
             yield return new WaitForSeconds(fireRate);
         }
     }

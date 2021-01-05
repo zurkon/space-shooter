@@ -5,10 +5,11 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     [Header("Stats")]
+    [Tooltip("Laser movement speed value.")]
     public float moveSpeed = 20f;
 
-    // Start is called before the first frame update
-    void Start()
+    // Called when the object becomes enabled and active.
+    void OnEnable()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2( 0, moveSpeed);
     }
@@ -17,5 +18,13 @@ public class Laser : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.name == "Shredder")
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
