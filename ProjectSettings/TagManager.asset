@@ -44,7 +44,7 @@ TagManager:
   - name: Background
     uniqueID: 4198690263
     locked: 0
-  - name: Bullets
+  - name: Lasers
     uniqueID: 1275242977
     locked: 0
   - name: Enemy
