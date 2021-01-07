@@ -5,11 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewWave", menuName = "Enemy Wave Config")]
 public class WaveConfig : ScriptableObject
 {
+    [Header("Wave Configuration")]
     public GameObject enemyPrefab;
     public GameObject pathPrefab;
+    [Space]
+    [Tooltip("How much time in seconds each Enemy will be spawned.")]
+    [Range(0.1f, 2f)]
     public float timeBetweenSpawns = 0.5f;
     // public float spawnRandomFactor = 0.3f;
+    [Tooltip("How many enemies will be spawned.")]
     public int numberOfEnemies = 5;
+    [Tooltip("Movement Speed of each Enemy from this Wave.")]
     public float moveSpeed = 2f;
 
     public List<Transform> GetWaypoints()

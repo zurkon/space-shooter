@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [Header("Enemy Spawner Props")]
+    [Tooltip("List of WaveConfig object")]
     public List<WaveConfig> waveConfigList;
     int waveIndex = 0;
 
@@ -18,11 +20,12 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < waveConfig.numberOfEnemies; i++)
         {
-            Instantiate(
+            GameObject newEnemy = Instantiate(
                 waveConfig.enemyPrefab,
                 waveConfig.GetWaypoints()[waveIndex].transform.position,
                 Quaternion.identity
                 );
+            newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfig);
             yield return new WaitForSeconds(waveConfig.timeBetweenSpawns);
         }
     }
