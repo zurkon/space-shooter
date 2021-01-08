@@ -18,4 +18,4 @@ MonoBehaviour:
     type: 3}
   timeBetweenSpawns: 0.5
   numberOfEnemies: 6
-  moveSpeed: 7
+  moveSpeed: 4

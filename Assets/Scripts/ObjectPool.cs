@@ -7,9 +7,9 @@ public class ObjectPool : MonoBehaviour
     [Header("Object Pool Info")]
     public static ObjectPool SharedInstance;
     public List<GameObject> pooledObjects;
-    [Tooltip("The object that you want to create a Pool.")]
-    public GameObject objectToPool;
-    [Tooltip("How many instance of that object you want to store.")]
+    [Tooltip("Objects that you want to create a Pool.")]
+    public List<GameObject> objectsToPool;
+    [Tooltip("How many instance of each object you want to store.")]
     public int amountToPool;
 
     private void Awake()
@@ -21,19 +21,24 @@ public class ObjectPool : MonoBehaviour
     void Start()
     {
         pooledObjects = new List<GameObject>();
-        for (int i = 0; i < amountToPool; i++)
+
+        // For each objectToPool from the objectsToPool List
+        foreach (GameObject objectToPool in objectsToPool)
         {
-            GameObject obj = (GameObject)Instantiate(objectToPool);
-            obj.SetActive(false);
-            pooledObjects.Add(obj);
+            for (int i = 0; i < amountToPool; i++)
+            {
+                GameObject obj = Instantiate(objectToPool);
+                obj.SetActive(false);
+                pooledObjects.Add(obj);
+            }
         }
     }
 
-    public GameObject GetPooledObject()
+    public GameObject GetPooledObject(string objectTag)
     {
         for (int i = 0; i < pooledObjects.Count; i++)
         {
-            if (!pooledObjects[i].activeInHierarchy)
+            if (!pooledObjects[i].activeInHierarchy && pooledObjects[i].CompareTag(objectTag))
             {
                 return pooledObjects[i];
             }

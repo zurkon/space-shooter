@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    [Header("Stats")]
+    [Header("Properties")]
     [Tooltip("Laser movement speed value.")]
     public float moveSpeed = 20f;
 

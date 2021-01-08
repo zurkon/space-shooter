@@ -39,8 +39,7 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            // Instantiate(laserPrefab, transform.position, Quaternion.identity);
-            GameObject laser = ObjectPool.SharedInstance.GetPooledObject();
+            GameObject laser = ObjectPool.SharedInstance.GetPooledObject("PlayerLaser");
             if (laser != null)
             {
                 laser.transform.position = transform.position;

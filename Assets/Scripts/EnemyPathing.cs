@@ -11,23 +11,30 @@ public class EnemyPathing : MonoBehaviour
     private float progress = 0f;
     private float movementPerFrame = 0f;
 
-    // Start is called before the first frame update
-    void Start()
+    // Called when the object becomes enabled and active.
+    void OnEnable()
     {
-        // Get waypoint positions
-        waypoints = waveConfig.GetWaypoints();
+        // Every Time this object gets Active again, we need to reset progress value
+        progress = 0f;
 
-        // Set Enemy moveSpeed
-        moveSpeed = waveConfig.moveSpeed;
+        if( waveConfig )
+        {
+            // Get waypoint positions
+            waypoints = waveConfig.GetWaypoints();
 
-        // Set Enemy initial position
-        transform.position = waypoints[0].transform.position;
+            // Set Enemy moveSpeed
+            moveSpeed = waveConfig.moveSpeed;
 
-        // Get distance between Enemy inital position to final waypoint
-        float distance = Vector3.Distance(transform.position, waypoints[waypoints.Count - 1].transform.position);
+            // Set Enemy initial position
+            transform.position = waypoints[0].transform.position;
 
-        // Set the movement of this enemy to final waypoint per frame
-        movementPerFrame = moveSpeed / distance;
+            // Get distance between Enemy inital position to final waypoint
+            float distance = Vector3.Distance(transform.position, waypoints[waypoints.Count - 1].transform.position);
+
+            // Set the movement of this enemy to final waypoint per frame
+            movementPerFrame = moveSpeed / distance;
+        }
+        
     }
 
     // Update is called once per frame
@@ -57,9 +64,9 @@ public class EnemyPathing : MonoBehaviour
 
         transform.position = newPosition;
 
-        if (progress > 1f)
+        if (progress >= 1f)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
     }

@@ -33,12 +33,15 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < waveConfig.numberOfEnemies; i++)
         {
-            GameObject newEnemy = Instantiate(
-                waveConfig.enemyPrefab,
-                waveConfig.GetWaypoints()[0].transform.position,
-                Quaternion.identity
-                );
+            // Get a Enemy object from ObjectPool
+            GameObject newEnemy = ObjectPool.SharedInstance.GetPooledObject(waveConfig.enemyPrefab.tag);
+            newEnemy.transform.position = waveConfig.GetWaypoints()[0].transform.position;
+            newEnemy.transform.rotation = Quaternion.identity;
+
             newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfig);
+
+            newEnemy.SetActive(true);
+
             yield return new WaitForSeconds(waveConfig.timeBetweenSpawns);
         }
     }
