@@ -22,7 +22,7 @@ public class Laser : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.name == "Shredder")
+        if (collider.gameObject.tag == "Shredder")
         {
             gameObject.SetActive(false);
         }

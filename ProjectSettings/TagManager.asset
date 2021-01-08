@@ -8,6 +8,7 @@ TagManager:
   - EnemyMedium
   - PlayerLaser
   - EnemyLaser
+  - Shredder
   layers:
   - Default
   - TransparentFX
@@ -17,10 +18,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - PlayerLaser
+  - EnemyLaser
   - 
   - 
   - 

@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Header("Player Movement")]
+    [Header("Player Properties")]
+    public int health = 100;
     [Tooltip("Player movement speed value.")]
     public float moveSpeed = 10f;
     [Tooltip("Padding for Player object's half don't go outside of MainCamera.")]
     public Vector2 padding = new Vector2( 0.3f, 1f );
 
-    [Header("Player Stats")]
+    [Header("Player Cannon")]
     [Tooltip("Time in seconds that Ship waits until shoot again.")]
     public float fireRate = 0.1f;
 
@@ -60,6 +61,28 @@ public class Player : MonoBehaviour
         if (Input.GetButtonUp("Fire1"))
         {
             StopCoroutine(firingCoroutine);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
+
+        if (damageDealer)
+        {
+            TakeDamage(damageDealer.GetDamage());
+
+            damageDealer.Hit();
+        }
+
+    }
+
+    private void TakeDamage(int damage)
+    {
+        health -= damage;
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
