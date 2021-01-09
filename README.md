@@ -17,5 +17,5 @@ Then open the root project folder in Unity and press the Play button to run this
 This project is licensed under the MIT License.
 
 # Acknowledgments
-* Awesome pixelart from [Pixel Frog](https://twitter.com/hi_PixelFrog)
-* Awesome Unity projects and inspiration from [Andre_mc](https://twitter.com/andre_mc) AKA [MixandJam](https://www.youtube.com/channel/UCLyVUwlB_Hahir_VsKkGPIA)
+* Awesome pixelart from [ansimuz](https://ansimuz.itch.io/) [<img src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/twitter.svg" width="15"/>](https://twitter.com/ansimuz)
+* Background Music from [DOS-88 Synthwave Music Library](https://dos88.itch.io/dos-88-music-library)
