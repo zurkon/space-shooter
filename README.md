@@ -2,7 +2,7 @@
 
 # :joystick: Unity Space Shooter Game :flying_saucer:
 
-<img src="./Demo/UnitySpaceShooter.gif" alt="Game Title Scene" height="200">
+<img src="./Demo/UnitySpaceShooter.gif" alt="Game Title Scene" height="400">
 
 </div>
 
