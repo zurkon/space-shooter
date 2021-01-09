@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy Properties")]
     public float health = 100;
     public float shotCounter;
     public float minTimeBetweenShots = 0.2f;
     public float maxTimeBetweenShots = 3f;
+
+    [Header("ExplosionFX")]
+    [Tooltip("Object's tag name that will be called to animate.")]
+    public string effectTagName;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +65,13 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            GameObject objFX = ObjectPool.SharedInstance.GetPooledObject(effectTagName);
+            if (objFX)
+            {
+                objFX.transform.position = transform.position;
+                objFX.transform.rotation = Quaternion.identity;
+                objFX.SetActive(true);
+            }
             gameObject.SetActive(false);
         }
     }

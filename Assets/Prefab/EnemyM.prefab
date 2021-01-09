@@ -127,6 +127,7 @@ MonoBehaviour:
   shotCounter: 0
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 1.5
+  effectTagName: ExplosionFX
 --- !u!114 &4638177492957569671
 MonoBehaviour:
   m_ObjectHideFlags: 0

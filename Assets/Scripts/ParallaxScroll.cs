@@ -11,8 +11,7 @@ public class ParallaxScroll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Width: " + GetComponent<SpriteRenderer>().bounds.size.x);
-        Debug.Log("height: " + GetComponent<SpriteRenderer>().bounds.size.y);
+
     }
 
     // Update is called once per frame
