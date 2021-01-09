@@ -23,6 +23,19 @@ public class Explosion : MonoBehaviour
 
     public void DisableFX()
     {
+        if(animationName != "PlayerDeath")
+        {
+            gameObject.SetActive(false);
+        } 
+        else
+        {
+            StartCoroutine(DeathFX());
+        }
+    }
+
+    IEnumerator DeathFX()
+    {
+        yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
     }
 }
