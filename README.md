@@ -2,7 +2,7 @@
 
 # :joystick: Unity Space Shooter Game :flying_saucer:
 
-<img src="./Demo/UnitySpaceShooter.gif" alt="Game Title Scene" height="400">
+<img src="https://raw.githubusercontent.com/Zurkon/RepoAssets/main/gifs/UnitySpaceShooter.gif" alt="Game Title Scene" height="400">
 
 </div>
 
