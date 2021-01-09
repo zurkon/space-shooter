@@ -16,6 +16,12 @@ public class Player : MonoBehaviour
     [Tooltip("Time in seconds that Ship waits until shoot again.")]
     public float fireRate = 0.1f;
 
+    [Header("Audio Source")]
+    public AudioSource audioSource;
+    public AudioClip shootSound;
+    [Range(0, 1)]
+    public float shootSoundVolume = 0.5f;
+
     Coroutine firingCoroutine;
 
     float xMin;
@@ -46,6 +52,7 @@ public class Player : MonoBehaviour
                 laser.transform.position = transform.position;
                 laser.transform.rotation = Quaternion.identity;
                 laser.SetActive(true);
+                audioSource.PlayOneShot(shootSound, shootSoundVolume);
             }
             yield return new WaitForSeconds(fireRate);
         }

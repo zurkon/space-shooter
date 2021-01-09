@@ -14,6 +14,12 @@ public class Enemy : MonoBehaviour
     [Tooltip("Object's tag name that will be called to animate.")]
     public string effectTagName;
 
+    [Header("Audio Source")]
+    public AudioSource audioSource;
+    public AudioClip shootSound;
+    [Range(0, 1)]
+    public float shootSoundVolume = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +50,7 @@ public class Enemy : MonoBehaviour
             laser.transform.position = transform.position;
             laser.transform.rotation = Quaternion.identity;
             laser.SetActive(true);
+            audioSource.PlayOneShot(shootSound, shootSoundVolume);
         }
     }
 
@@ -65,12 +72,12 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            GameObject objFX = ObjectPool.SharedInstance.GetPooledObject(effectTagName);
-            if (objFX)
+            GameObject explosionFX = ObjectPool.SharedInstance.GetPooledObject(effectTagName);
+            if (explosionFX)
             {
-                objFX.transform.position = transform.position;
-                objFX.transform.rotation = Quaternion.identity;
-                objFX.SetActive(true);
+                explosionFX.transform.position = transform.position;
+                explosionFX.transform.rotation = Quaternion.identity;
+                explosionFX.SetActive(true);
             }
             gameObject.SetActive(false);
         }
