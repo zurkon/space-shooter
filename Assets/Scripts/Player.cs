@@ -22,8 +22,12 @@ public class Player : MonoBehaviour
     [Range(0, 1)]
     public float shootSoundVolume = 0.5f;
 
-    Coroutine firingCoroutine;
+    [Header("ExplosionFX")]
+    [Tooltip("Object's tag name that will be called to animate.")]
+    public string effectTagName;
 
+    // Private Variables
+    Coroutine firingCoroutine;
     float xMin;
     float xMax;
     float yMin;
@@ -73,6 +77,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject.tag);
         DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
 
         if (damageDealer)
@@ -87,8 +92,16 @@ public class Player : MonoBehaviour
     private void TakeDamage(int damage)
     {
         health -= damage;
-        if(health <= 0)
+
+        if (health <= 0)
         {
+            GameObject explosionFX = ObjectPool.SharedInstance.GetPooledObject(effectTagName);
+            if (explosionFX)
+            {
+                explosionFX.transform.position = transform.position;
+                explosionFX.transform.rotation = Quaternion.identity;
+                explosionFX.SetActive(true);
+            }
             Destroy(gameObject);
         }
     }

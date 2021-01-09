@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4388057458297632258}
   - component: {fileID: 4638177492957569671}
   - component: {fileID: 3691218437957744951}
+  - component: {fileID: 3675833667126440971}
   m_Layer: 9
   m_Name: EnemyM
   m_TagString: EnemyMedium
@@ -240,3 +241,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3675833667126440971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199199424601616195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ad02200e882c945815aa81abffbf68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+  effectTagName: HitFX

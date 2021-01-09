@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4019682710987030723}
   - component: {fileID: 4019682710987030724}
+  - component: {fileID: -6117276457109553497}
   - component: {fileID: 1302104817752579613}
   - component: {fileID: 4019682710987030722}
   - component: {fileID: -1484223376872451649}
@@ -85,6 +86,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &-6117276457109553497
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4019682710987030725}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &1302104817752579613
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -120,6 +142,7 @@ MonoBehaviour:
   audioSource: {fileID: -1484223376872451649}
   shootSound: {fileID: 8300000, guid: d1323897d6300eb43a099eb1f8f24f6e, type: 3}
   shootSoundVolume: 0.5
+  effectTagName: ExplosionFX
 --- !u!82 &-1484223376872451649
 AudioSource:
   m_ObjectHideFlags: 0

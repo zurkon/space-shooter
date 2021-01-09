@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7333573752806390060}
   - component: {fileID: 5838587928577245117}
   - component: {fileID: -6959380799900704591}
+  - component: {fileID: 9125307025657809886}
   m_Layer: 9
   m_Name: EnemyS
   m_TagString: EnemySmall
@@ -240,3 +241,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &9125307025657809886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419908120083494520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ad02200e882c945815aa81abffbf68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+  effectTagName: HitFX
