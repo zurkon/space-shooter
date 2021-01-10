@@ -1,2 +1,2 @@
 # Don't Count ShaderLab files on Github Repo's Languages
-Assets/TextMeshPro/* linguist-vendored
+Assets/TextMeshPro/Shaders/* linguist-vendored
