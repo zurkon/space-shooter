@@ -6,6 +6,24 @@
 
 </div>
 
+# Description
+
+<img align="right" src="https://raw.githubusercontent.com/Zurkon/RepoAssets/main/img/pathPrefab.png" width="200">
+
+This was made specially for practices some concepts:
+- [Object Pooling](https://www.raywenderlich.com/847-object-pooling-in-unity)
+- [Singleton Pattern](https://en.wikipedia.org/wiki/Singleton_pattern)
+- [Bezier Curve](https://www.youtube.com/watch?v=pnYccz1Ha34) for enemies pathing
+
+At some point of development, like creating Enemies Pathing, i made a `Enemy Path Editor` inside `Path's Prefab` for produtivity.
+
+# Gameplay
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/Zurkon/RepoAssets/main/gifs/gameplay.gif" height="400">
+
+</div>
 
 # Setup
 First of all, make sure that you have the Prerequisites to run this project on Unity.
