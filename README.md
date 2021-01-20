@@ -2,13 +2,13 @@
 
 # :joystick: Unity Space Shooter Game :flying_saucer:
 
-<img src="https://raw.githubusercontent.com/Zurkon/RepoAssets/main/gifs/UnitySpaceShooter.gif" alt="Game Title Scene" height="400">
+<img src="https://raw.githubusercontent.com/Zurkon/RepoAssets/main/space-shooter/UnitySpaceShooter.gif" alt="Game Title Scene" height="400">
 
 </div>
 
 # Description
 
-<img align="right" src="https://raw.githubusercontent.com/Zurkon/RepoAssets/main/img/pathPrefab.png" width="200">
+<img align="right" src="https://raw.githubusercontent.com/Zurkon/RepoAssets/main/space-shooter/pathPrefab.png" width="200">
 
 This was made specially for practices some concepts:
 - [Object Pooling](https://www.raywenderlich.com/847-object-pooling-in-unity)
@@ -21,7 +21,7 @@ At some point of development, like creating Enemies Pathing, i made a `Enemy Pat
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Zurkon/RepoAssets/main/gifs/gameplay.gif" height="400">
+<img src="https://raw.githubusercontent.com/Zurkon/RepoAssets/main/space-shooter/gameplay.gif" height="400">
 
 </div>
 
