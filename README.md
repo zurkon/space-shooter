@@ -21,7 +21,7 @@ At some point of development, like creating Enemies Pathing, i made a `Enemy Pat
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/Zurkon/RepoAssets/main/space-shooter/gameplay.gif" height="400">
+<img src="https://raw.githubusercontent.com/Zurkon/repo-assets/main/space-shooter/gameplay.gif" height="400">
 
 </div>
 
