@@ -8,7 +8,7 @@
 
 # Description
 
-<img align="right" src="https://raw.githubusercontent.com/Zurkon/RepoAssets/main/space-shooter/pathPrefab.png" width="200">
+<img align="right" src="https://raw.githubusercontent.com/Zurkon/repo-assets/main/space-shooter/pathPrefab.png" width="200">
 
 This was made specially for practices some concepts:
 - [Object Pooling](https://www.raywenderlich.com/847-object-pooling-in-unity)
